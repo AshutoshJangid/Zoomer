@@ -1,0 +1,11 @@
+#video-grid{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    color: blueviolet;
+    border: 50px solid black;
+}
+video{
+    height: 300px;
+    width: 400px;
+}
