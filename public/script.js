@@ -1,3 +1,4 @@
+const { text } = require("express");
 
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid'); 
@@ -58,3 +59,15 @@ const addVideoStream = (video, stream) =>{
     })
     videoGrid.append(video);
 }
+
+let text = $('#chat_message')
+// console.log(msg);
+
+$('html').keydown((e)=>{
+    if(e.which==13 && text.val() !== 0 ){
+    console.log(text.val());
+
+        socket.emit('message',text.val());
+        text.val('')
+    }
+})
